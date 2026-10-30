@@ -1,0 +1,20 @@
+[
+  {
+    "number": "01 / UNDERSTAND",
+    "title": "AI fundamentals",
+    "description": "Understand model capabilities, limitations, context windows, hallucinations and responsible use.",
+    "published": true
+  },
+  {
+    "number": "02 / INSTRUCT",
+    "title": "Prompt effectively",
+    "description": "Set a clear role, task, context, constraints and output format. Iterate using feedback.",
+    "published": true
+  },
+  {
+    "number": "03 / PRACTICE",
+    "title": "Create AI Skills",
+    "description": "Package repeatable instructions, examples and checks into a reusable task method.",
+    "published": true
+  }
+]
