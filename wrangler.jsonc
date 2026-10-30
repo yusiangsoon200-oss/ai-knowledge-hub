@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "ai-knowledge-hub",
+  "name": "ai-knowledge-hub-cms-dev",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-30",
   "assets": {
@@ -16,6 +16,6 @@
     }
   ],
   "vars": {
-    "CMS_BASE_URL": "https://ai-knowledge-hub.yusiangsoon200.workers.dev"
+    "CMS_BASE_URL": "http://localhost:8787"
   }
 }
