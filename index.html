@@ -71,4 +71,48 @@ filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classLis
 document.getElementById('year').textContent=new Date().getFullYear();
 document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preventDefault();const msg=document.getElementById('formmsg');msg.textContent='Thanks! The subscription form is designed and validated, but it is not connected to an email provider yet. Connect an approved newsletter service before collecting addresses.';});
 </script>
+
+<script>
+/* CMS content loader: Pages CMS edits JSON files in GitHub; the deployed site reads them here. */
+(async function loadCmsContent(){
+  const get=async path=>{const r=await fetch(path,{cache:'no-store'});if(!r.ok)throw new Error('Could not load '+path+' ('+r.status+')');return r.json()};
+  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n};
+  const safeHref=value=>{const s=String(value||'#').trim();if(s.startsWith('#')||s.startsWith('/')||/^https:\/\//i.test(s))return s;return '#'};
+  try{
+    const [home,resources,learning,cases]=await Promise.all([
+      get('/content/homepage.json'),get('/content/resources.json'),get('/content/learning.json'),get('/content/business-cases.json')
+    ]);
+    const hero=document.querySelector('.hero h1');if(hero&&home.hero_title){hero.textContent=home.hero_title;}
+    const heroDesc=document.querySelector('.hero-inner > div > p');if(heroDesc&&home.hero_description)heroDesc.textContent=home.hero_description;
+    const featured=document.querySelector('.feature-main h3');if(featured&&home.featured_title)featured.textContent=home.featured_title;
+    const featuredDesc=document.querySelector('.feature-main p');if(featuredDesc&&home.featured_description)featuredDesc.textContent=home.featured_description;
+
+    const cardHost=document.getElementById('cards');
+    const visibleResources=(Array.isArray(resources)?resources:[]).filter(x=>x.published!==false);
+    if(cardHost){
+      cardHost.replaceChildren();
+      visibleResources.forEach(item=>{
+        const card=el('article','card');card.dataset.category=item.category||'AI Tips';
+        const top=el('div','cardtop');top.append(el('span','cardicon',item.icon||'✳'),el('time','',item.date||'AI RESOURCE'));
+        const tag=el('span','tag',item.category||'AI Tips');
+        const title=el('h3','',item.title||'Untitled resource');
+        const summary=el('p','',item.summary||'');
+        const link=el('a','read',(item.link_text||'Explore resource')+' →');link.href=safeHref(item.link_url);
+        card.append(top,tag,title,summary,link);cardHost.append(card);
+      });
+    }
+    const learningHost=document.querySelector('.learning-grid');
+    if(learningHost){learningHost.replaceChildren();(Array.isArray(learning)?learning:[]).filter(x=>x.published!==false).forEach(item=>{
+      const card=el('article','learn');card.append(el('span','num',item.number||'LEARN'),el('h3','',item.title||''),el('p','',item.description||''));learningHost.append(card);
+    });}
+    const caseHost=document.querySelector('.case-grid');
+    if(caseHost){caseHost.replaceChildren();(Array.isArray(cases)?cases:[]).filter(x=>x.published!==false).forEach(item=>{
+      const card=el('article','case');card.append(el('span','caseicon',item.icon||'✳'));
+      const body=el('div');body.append(el('h3','',item.title||''),el('p','',item.description||''));card.append(body);caseHost.append(card);
+    });}
+    if(typeof update==='function')update();
+  }catch(error){console.error('CMS content load failed; showing built-in page content.',error);}
+})();
+</script>
+
 </body></html>
