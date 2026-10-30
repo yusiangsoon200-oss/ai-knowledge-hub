@@ -1,0 +1,26 @@
+[
+  {
+    "icon": "📄",
+    "title": "Document processing",
+    "description": "Extract key fields from documents, classify content and prepare structured summaries for human review.",
+    "published": true
+  },
+  {
+    "icon": "📊",
+    "title": "Data analysis and reporting",
+    "description": "Turn spreadsheets into clear trends, explanations and draft management reports.",
+    "published": true
+  },
+  {
+    "icon": "📝",
+    "title": "Meeting productivity",
+    "description": "Convert approved notes or transcripts into decisions, action items and follow-up drafts.",
+    "published": true
+  },
+  {
+    "icon": "🔄",
+    "title": "Workflow automation",
+    "description": "Combine AI with approved tools and human checkpoints to reduce repetitive manual steps.",
+    "published": true
+  }
+]
