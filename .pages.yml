@@ -1,0 +1,110 @@
+media:
+  input: media
+  output: /media
+
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: content/homepage.json
+    format: json
+    fields:
+      - name: hero_title
+        label: Hero title
+        type: string
+        required: true
+      - name: hero_description
+        label: Hero description
+        type: text
+      - name: featured_title
+        label: Featured title
+        type: string
+      - name: featured_description
+        label: Featured description
+        type: text
+
+  - name: resources
+    label: AI News, Tips & Learning
+    type: file
+    path: content/resources.json
+    format: json
+    list: true
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          - AI News
+          - AI Tips
+          - AI Learning
+        required: true
+      - name: date
+        label: Display date
+        type: date
+      - name: icon
+        label: Icon (emoji)
+        type: string
+      - name: summary
+        label: Summary
+        type: text
+        required: true
+      - name: link_text
+        label: Link label
+        type: string
+      - name: link_url
+        label: Link URL
+        type: string
+      - name: published
+        label: Published on website
+        type: boolean
+
+  - name: learning
+    label: Learning paths
+    type: file
+    path: content/learning.json
+    format: json
+    list: true
+    fields:
+      - name: number
+        label: Number / stage
+        type: string
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: published
+        label: Published on website
+        type: boolean
+
+  - name: business_cases
+    label: Business cases
+    type: file
+    path: content/business-cases.json
+    format: json
+    list: true
+    fields:
+      - name: icon
+        label: Icon (emoji)
+        type: string
+      - name: title
+        label: Case title
+        type: string
+        required: true
+      - name: description
+        label: Description
+        type: text
+        required: true
+      - name: published
+        label: Published on website
+        type: boolean
+
+settings:
+  content:
+    merge: true
