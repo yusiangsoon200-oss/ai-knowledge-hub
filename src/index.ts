@@ -23,6 +23,16 @@ export default {
       return Response.redirect(new URL("/admin/login.html", url), 302);
     }
 
+    // Protect dashboard and all future admin pages at the Worker boundary.
+    // Client-side redirects are only a usability feature, never an access control.
+    if (url.pathname.startsWith("/admin/") && !url.pathname.startsWith("/admin/login")) {
+      const auth = createAuth(env);
+      const session = await auth.api.getSession({ headers: request.headers });
+      if (!session) {
+        return Response.redirect(new URL("/admin/login.html", url), 302);
+      }
+    }
+
     if (url.pathname.startsWith("/api/auth/")) {
       if (url.pathname === "/api/auth/sign-up/email" && request.method === "POST") {
         const suppliedToken = request.headers.get("x-cms-bootstrap-token");
