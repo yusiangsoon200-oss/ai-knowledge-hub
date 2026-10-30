@@ -11,7 +11,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "ai-knowledge-hub-cms"
+      "database_name": "ai-knowledge-hub-cms",
+      "database_id": "1c3469dc-d404-45dc-81e0-55987b8c57f1"
     }
   ],
   "vars": {
