@@ -88,7 +88,7 @@ document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preven
     const featuredDesc=document.querySelector('.feature-main p');if(featuredDesc&&home.featured_description)featuredDesc.textContent=home.featured_description;
 
     const cardHost=document.getElementById('cards');
-    const visibleResources=(Array.isArray(resources)?resources:[]).filter(x=>x.published!==false);
+    const visibleResources=(Array.isArray(resources)?resources:[]).filter(x=>x.published===true);
     if(cardHost){
       cardHost.replaceChildren();
       visibleResources.forEach(item=>{
@@ -102,11 +102,11 @@ document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preven
       });
     }
     const learningHost=document.querySelector('.learning-grid');
-    if(learningHost){learningHost.replaceChildren();(Array.isArray(learning)?learning:[]).filter(x=>x.published!==false).forEach(item=>{
+    if(learningHost){learningHost.replaceChildren();(Array.isArray(learning)?learning:[]).filter(x=>x.published===true).forEach(item=>{
       const card=el('article','learn');card.append(el('span','num',item.number||'LEARN'),el('h3','',item.title||''),el('p','',item.description||''));learningHost.append(card);
     });}
     const caseHost=document.querySelector('.case-grid');
-    if(caseHost){caseHost.replaceChildren();(Array.isArray(cases)?cases:[]).filter(x=>x.published!==false).forEach(item=>{
+    if(caseHost){caseHost.replaceChildren();(Array.isArray(cases)?cases:[]).filter(x=>x.published===true).forEach(item=>{
       const card=el('article','case');card.append(el('span','caseicon',item.icon||'✳'));
       const body=el('div');body.append(el('h3','',item.title||''),el('p','',item.description||''));card.append(body);caseHost.append(card);
     });}
