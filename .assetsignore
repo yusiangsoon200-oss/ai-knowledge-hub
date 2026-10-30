@@ -1,0 +1,13 @@
+src/
+migrations/
+node_modules/
+.git/
+.github/
+package.json
+package-lock.json
+tsconfig.json
+wrangler.jsonc
+.assetsignore
+.pages.yml
+CMS-GUIDE.md
+README.md
