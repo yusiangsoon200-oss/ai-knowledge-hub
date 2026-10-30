@@ -65,8 +65,8 @@ footer{padding:28px 0;background:#081427;color:#b5c5da}.foot{display:flex;justif
 </main>
 <footer><div class="wrap foot"><strong>✳ AI KNOWLEDGE HUB</strong><span>Learn continuously. Apply responsibly. Share what works.</span><span>© <span id="year"></span> AI Knowledge Hub</span></div></footer>
 <script>
-const filters=[...document.querySelectorAll('.filter')], cards=[...document.querySelectorAll('.card')], search=document.getElementById('search');let active='All';
-function update(){const q=search.value.toLowerCase().trim();let shown=0;cards.forEach(c=>{const ok=(active==='All'||c.dataset.category===active)&&c.innerText.toLowerCase().includes(q);c.style.display=ok?'flex':'none';if(ok)shown++});document.getElementById('empty').style.display=shown?'none':'block'}
+const filters=[...document.querySelectorAll('.filter')], search=document.getElementById('search');let active='All';
+function update(){const q=search.value.toLowerCase().trim();let shown=0;document.querySelectorAll('#cards .card').forEach(c=>{const ok=(active==='All'||c.dataset.category===active)&&c.innerText.toLowerCase().includes(q);c.style.display=ok?'flex':'none';if(ok)shown++});document.getElementById('empty').style.display=shown?'none':'block'}
 filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');active=b.dataset.filter;update()}));search.addEventListener('input',update);
 document.getElementById('year').textContent=new Date().getFullYear();
 document.getElementById('newsletterForm').addEventListener('submit',e=>{e.preventDefault();const msg=document.getElementById('formmsg');msg.textContent='Thanks! The subscription form is designed and validated, but it is not connected to an email provider yet. Connect an approved newsletter service before collecting addresses.';});
