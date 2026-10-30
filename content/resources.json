@@ -1,0 +1,62 @@
+[
+  {
+    "title": "What to look for when evaluating a new AI tool",
+    "category": "AI News",
+    "date": "2026-10-30",
+    "icon": "🗞️",
+    "summary": "Assess task fit, data handling, accuracy, integration, governance and total cost before adopting a tool.",
+    "link_text": "Explore evaluation checklist",
+    "link_url": "#learning",
+    "published": true
+  },
+  {
+    "title": "Give AI context before asking for an answer",
+    "category": "AI Tips",
+    "date": "2026-10-30",
+    "icon": "✍️",
+    "summary": "Share the goal, audience, source information, constraints and expected output format to improve relevance.",
+    "link_text": "Learn the prompting basics",
+    "link_url": "#learning",
+    "published": true
+  },
+  {
+    "title": "Build your first reusable AI Skill",
+    "category": "AI Learning",
+    "date": "2026-10-30",
+    "icon": "🎓",
+    "summary": "Define a repeatable task, document the steps, add examples and test the result against real inputs.",
+    "link_text": "View learning path",
+    "link_url": "#learning",
+    "published": true
+  },
+  {
+    "title": "Ask AI to show its assumptions",
+    "category": "AI Tips",
+    "date": "2026-10-30",
+    "icon": "🔍",
+    "summary": "Request missing information, assumptions and uncertainty instead of accepting a confident-sounding answer.",
+    "link_text": "See verification practices",
+    "link_url": "#learning",
+    "published": true
+  },
+  {
+    "title": "Prompt, Skill, Tool and Workflow: what is the difference?",
+    "category": "AI Learning",
+    "date": "2026-10-30",
+    "icon": "🧩",
+    "summary": "Understand how instructions, reusable procedures, connected capabilities and business processes work together.",
+    "link_text": "Explore the concepts",
+    "link_url": "#learning",
+    "published": true
+  },
+  {
+    "title": "Responsible AI starts with responsible data",
+    "category": "AI News",
+    "date": "2026-10-30",
+    "icon": "🛡️",
+    "summary": "Use approved tools, minimize sensitive inputs and review privacy, security and intellectual-property implications.",
+    "link_text": "Read safe-use guidance",
+    "link_url": "#learning",
+    "published": true
+  }
+]
