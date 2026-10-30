@@ -3,7 +3,7 @@
     "icon": "📄",
     "title": "Document processing",
     "description": "Extract key fields from documents, classify content and prepare structured summaries for human review.",
-    "published": true
+    "published": false
   },
   {
     "icon": "📊",
@@ -15,7 +15,7 @@
     "icon": "📝",
     "title": "Meeting productivity",
     "description": "Convert approved notes or transcripts into decisions, action items and follow-up drafts.",
-    "published": true
+    "published": false
   },
   {
     "icon": "🔄",
